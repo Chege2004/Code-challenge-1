@@ -12,13 +12,18 @@ function gradeCalculator() {
         //Provide the appropriate grade based on the input marks
     }else if (studentMarks >79) {
         console.log("Grade A");
+        return;
     }else if (studentMarks >=60 && studentMarks <=79) {
         console.log("Grade B");
+        return;   
     }else if (studentMarks >49 && studentMarks <=59) {
-        alert("Grade C-");
+        console.log("Grade C-");
+        return;
     }else if (studentMarks >=40 && studentMarks<=49) {
         console.log("Grade D-")
+        return;
     }else {
         console.log("Grade E-")
+        return;
     }
 }
