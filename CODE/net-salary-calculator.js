@@ -18,9 +18,11 @@ function netSalary() {
         if (typeOfTax === "monthly") {
             calculatePayeeMonthlyTwoThree(salary);
             calculateNhifDeduction(benefits);
+            nssfDeduction()
         } else if (typeOfTax === "yearly") {
             calculatePayeeYearlyTwoThree(salary);
             calculateNhifDeduction(benefits);
+            nssfDeduction()
         } else {
             alert("Invalid input for tax type.");
             return;
@@ -31,9 +33,11 @@ function netSalary() {
         if (typeOfTax === "monthly") {
             calculatePayeeMonthlyTwoOne(salary);
             calculateNhifDeduction(benefits);
+            nssfDeduction()
         } else if (typeOfTax === "yearly") {
             calculatePayeeYearlyTwoOne(salary);
             calculateNhifDeduction(benefits);
+            nssfDeduction();
         } else {
             alert("Invalid input for tax type.");
             return;
@@ -156,4 +160,26 @@ function calculateNhifDeduction(benefits) {
 
     console.log(`NHIF deduction: ${deduction}`);
     return deduction;
+}
+
+function nssfDeduction() {
+    let monthPay = parseFloat(prompt("Enter  year of payment for monthly salary"));
+    let monthlySalary = parseFloat(prompt("Enter monthly for the year salary"));
+    let deduction=0;
+    if (monthlySalary <= 7000 && monthPay >= 2024) {
+        deduction =  monthlySalary * 0.06;
+        console.log( `NSSF deduction: ${deduction}`); return;
+    } else if (monthlySalary> 7000 && salary <= 36000 && monthPay >= 2024) {
+        deduction = monthlySalary * 0.06;
+        console.log( `NSSF deduction: ${deduction}`); return;
+    } else if (monthlySalary <=6000 && monthPay <=2023){
+        deduction = monthlySalary* 0.06;
+        console.log( `NSSF deduction: ${deduction}`); return;
+    }else if (monthlySalary > 6000 && monthlySalary <= 18000 && monthPay <=2023){
+        deduction = monthlySalary * 0.06;
+        console.log( `NSSF deduction: ${deduction}`); return;
+    }else {
+        console.log("NSSF deduction: 0");
+        return;
+    }
 }
