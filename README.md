@@ -65,3 +65,34 @@ All the above are under the CODE folder in which there are files for every solut
 
 
 # Net-Salary-Calculator
+    Net Salary Calculation
+    This JavaScript program calculates net salary deductions based on user input for salary, benefits, and year of taxation. It incorporates various tax calculations depending on the year of taxation and whether the user opts for monthly or yearly tax calculations.
+
+    How to Use
+    Input Requirements:
+
+    Enter the salary and benefits as numeric values greater than zero.
+    Specify the year of taxation (numeric value).
+    Taxation Rules:
+
+    For taxation years 2023 and later:
+    Prompt for "Monthly" or "Yearly" tax calculation.
+    Calculate PAYE (tax) based on the provided salary using specific tax brackets.
+    For taxation years between 2022 and 2021:
+    Similar tax calculation options as above, but using different tax brackets.
+    Display NHIF (National Hospital Insurance Fund) deduction based on the provided benefits.
+    Calculate NSSF (National Social Security Fund) deduction based on the year of payment for monthly salaries.
+    Functions:
+
+    netSalary(): Main function to initiate salary calculation based on user inputs.
+    calculatePayeeMonthlyTwoThree(), calculatePayeeYearlyTwoThree(), calculatePayeeMonthlyTwoOne(), calculatePayeeYearlyTwoOne(): Functions to calculate PAYE based on salary and year of taxation.
+    calculateNhifDeduction(): Function to calculate NHIF deduction based on benefits.
+    nssfDeduction(): Function to calculate NSSF deduction based on monthly salary and year of payment.
+    Output:
+
+    Displays calculated PAYE (tax), NHIF deduction, and NSSF deduction based on user inputs and choices.
+    Usage Notes
+    Ensure all inputs are valid numeric values greater than zero.
+    Verify the year of taxation is within valid ranges (2023 and later, or between 2022 and 2021).
+    Follow prompts to specify tax calculation type (monthly or yearly).
+    Review console logs for detailed deduction information.
